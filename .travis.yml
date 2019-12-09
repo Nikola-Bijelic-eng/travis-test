@@ -13,8 +13,8 @@ jobs:
     - stage: test
       name: "Unit Tests: Node 10"
 
-      node_js:
-        - 10
+      # node_js:
+      #   - 10
 
       install:
         - ./tests/load_test_configuration.sh
