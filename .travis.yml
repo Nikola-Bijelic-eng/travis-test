@@ -1,0 +1,37 @@
+language: node_js
+sudo: required
+
+branches:
+  only:
+    - master
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: test
+      name: "Unit Tests: Node 10"
+
+      node_js:
+        - 10
+
+      install:
+        - ./tests/load_test_configuration.sh
+        - npm install
+        - ./replace_local_ip.sh
+        - docker-compose -f ./tests/docker-compose.yml up -d
+        - cd testCommands
+
+      #before_script:
+      #  - npm run lint
+
+      script:
+        - npm run coverage
+    #- stage: test
+    #  name: "Documentation Tests"
+    #  node_js:
+    #    - node
+    #  script:
+    #    - npm run lint:md
+    #    - npm run lint:text
