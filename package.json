@@ -55,7 +55,7 @@
     "node-opcua": "^2.1.8",
     "node-uuid": "^1.4.1",
     "npm": "^6.12.1",
-    "properties-reader": "0.0.16",
+    "properties-reader": "2.2.0",
     "request": "^2.82.0",
     "request-debug": "^0.2.0",
     "requirish": "^0.3.0",
